@@ -439,7 +439,9 @@ def main(_):
           dataset,
           num_readers=FLAGS.num_readers,
           common_queue_capacity=20 * FLAGS.batch_size,
-          common_queue_min=10 * FLAGS.batch_size)
+          common_queue_min=10 * FLAGS.batch_size,
+          seed=12345
+      )
       [image, label] = provider.get(['image', 'label'])
       label -= FLAGS.labels_offset
 
